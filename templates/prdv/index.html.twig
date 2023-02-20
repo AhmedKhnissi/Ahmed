@@ -1,0 +1,56 @@
+{% extends 'base_proprietaire.html.twig' %}
+{% block title %}Propriétaire{% endblock %}
+
+{% block body %}
+    <div id="hero" class="d-flex justify-content-center align-items-center">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="container py-5 ">
+                <div class="row">
+                    <table id="example" class="table table-striped" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Pays</th>
+                            <th>Gouvernorat</th>
+                            <th>Ville</th>
+                            <th>Rue</th>
+                            <th>Prendre Rendez-Vous</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr {% for v in veto %}>
+                            <td>{{ v.name }}</td>
+                            <td>{{ v.pays }}</td>
+                            <td>{{ v.gouvernorat }}</td>
+                            <td>{{ v.ville }}</td>
+                            <td>{{ v.rue }}</td>
+                            <td>
+
+                                <form action="{{ path('form', {'id_veterinaire': v.id})}}" method="post">
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                            <button type="submit" class="btn btn-primary">Rendez-Vous</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                            </td>
+                        </tr {% endfor %}>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'base_veterinaire.html.twig' %}
+
+{% block title %}Véterinaire{% endblock %}
+
+{% block body %}
+<div id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+
+
+        <div class="container py-5 ">
+            <div class="row">
+                <table id="example" class="table table-striped" style="width:105%">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Race</th>
+                        <th>Age</th>
+                        <th>Poids</th>
+                        <th>Propriétaire</th>
+                        <th>Ajouter Rapport Médicale </th>
+                        <th>Modifier Rapport Médicale</th>
+                        <th>Consulter Rapport Médicale</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr {% for a in animal %}>
+                        <td>{{ a.nom }}</td>
+                        <td>{{ a.race }}</td>
+                        <td>{{ a.age }}</td>
+                        <td>{{ a.poids }}</td>
+                        <td>{{ a.propriétaire }}</td>
+                        <td>
+
+                            <form action="{{ path('formanimal', {'id_Animal': a.id})}}" method="post" >
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-9" >
+                                        <button type="submit" class="btn btn-primary">Rapport Médical</button>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                        </td>
+                        <td>
+
+                            <form action="{{ path('updaterm', {'id_Animal': a.id})}}" method="post">
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <button type="submit" class="btn btn-primary">Rapport Médical</button>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                        </td>
+                        <td>
+
+                            <form action="{{ path('crmveto', {'id_Animal': a.id})}}" method="post">
+                                <div class="form-group">
+                                    <div class="col-sm-offset-3 col-sm-9">
+                                        <button type="submit" class="btn btn-primary">Rapport Médical</button>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                        </td>
+
+
+                    </tr {% endfor %}>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base_veterinaire.html.twig' %}
+{% block title %}Véterinaire{% endblock %}
+
+{% block body %}
+    <div id="hero" class="d-flex justify-content-center align-items-center">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+
+
+            <div class="container py-5 ">
+                <div class="row">
+                    {% if rm %}
+                        <table id="example" class="table table-striped" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Animal</th>
+                                <th>Rapport Médical</th>
+                                <th>Supprimer Rapport Médical</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{ rm.Animal.nom }}</td>
+                                <td>{{ rm.Description }}</td>
+                                <td>
+                                    <form class="my-form" action="{{ path('suprm', {'id': rm.id}) }}">
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('êtes-vous sur de Supprimer Ce Rapport Médical ?');">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    {% endif %}
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <style>
+        .btn {
+            background-color: blue;
+            color: white;
+        }
+        .my-form .btn {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+{% endblock %}

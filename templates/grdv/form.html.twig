@@ -1,0 +1,30 @@
+{% extends 'base_veterinaire.html.twig' %}
+{% block title %}Véterinaire{% endblock %}
+
+{% block body %}
+    <div id="hero" class="d-flex justify-content-center align-items-center">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="container py-5 ">
+                <div class="row">
+                    <table id="example" class="table table-striped" style="width:100%">
+
+
+                        {{ form_start(formulaire, {'attr': {'class': 'form-horizontal', 'novalidate': 'novalidate'}}) }}
+
+                        {{ form_row(formulaire.Description, {'label': 'Rapport M\'édical','label_attr': {'class': 'col-sm-3 control-label'}, 'attr': {'class': 'form-control'}}) }}
+
+
+                        {{ form_row(formulaire.Animal, {'label': 'Nom de l\'animal','label_attr': {'class': 'col-sm-3 control-label'}, 'attr': {'class': 'form-control'}}) }}
+
+
+                        {{ form_end(formulaire) }}
+
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

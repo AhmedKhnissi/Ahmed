@@ -1,0 +1,68 @@
+{% extends 'base_proprietaire.html.twig' %}
+{% block title %}Propriétaire{% endblock %}
+
+{% block body %}
+    <div id="hero" class="d-flex justify-content-center align-items-center">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+
+
+
+                   <table id="example" class="table table-striped" style="width:100%">
+                       <thead>
+                        <tr>
+
+                            <th>Date</th>
+                            <th>Heure</th>
+                            <th>Vetérinaire   </th>
+                            <th>Decision</th>
+                            <th>Race </th>
+                            <th>Animal  </th>
+                            <th>Modifier   </th>
+                            <th>Annuler   </th>
+
+                            </th>
+                        </tr>
+                       </thead>
+                       <tbody>
+                        <tr {%  for r in rdv %}>
+                            <td>{{ r.date }}</td>
+                            <td>{{ r.heure }}</td>
+                            <td>{{ r.Veterinaire.name }}</td>
+                            <td>{{ r.Decision.affectation}}</td>
+                            <td>{{ r.raceanimal}}</td>
+                            <td>{{ r.nomanimal}}</td>
+
+                            <td>
+                                <form class="my-form" action="{{ path('update', {'id': r.id}) }}">
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('êtes-vous sur de modifier votre rendez-vous?');">Modifier</button>
+                                </form>
+                            </td>
+                        <td>
+                                <form class="my-form" action="{{ path('sup', {'id': r.id}) }}">
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('êtes-vous sur d\'annuler votre rendez-vous?');">Delete</button>
+                                </form>
+                            </td>
+
+                        </tr {%  endfor %}>
+                       </tbody>
+                   </table>
+                       <style>
+                           .btn {
+                               background-color: blue;
+                               color: white;
+                           }
+                       .my-form .btn {
+                       background-color: blue;
+                       color: white;
+                       }
+                       </style>
+
+
+
+
+
+
+        </div>
+    </div>
+{% endblock %}

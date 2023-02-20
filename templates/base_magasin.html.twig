@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block title %}{% endblock %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{asset('assets/images/logo-myvet.png')}}" rel="icon">
+
+
+
+  <!-- Vendor CSS Files -->
+  <link href="{{asset('assets_front/vendor/bootstrap/css/bootstrap.min.css')}}"
+   rel="stylesheet">
+  <link href="{{asset('assets_front/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{asset('assets_front/css/style.css')}}" rel="stylesheet">
+   {% block stylesheet %}
+    
+   {% endblock %}
+  
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com"></a>
+        <i class="bi bi-phone"></i> 
+      </div>
+     
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <a href="#" class="logo me-auto"><img src="{{asset('assets/images/logo-myvet.png')}}" alt="" class="img-fluid"></a>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">produits</a></li>
+          <li><a class="nav-link scrollto" href="#about">commandes</a></li>
+          <li class="dropdown"><a href="#"><span>parametres</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">modifier profile</a></li>
+                
+              <li><a href="#">modifier mot de passe</a></li>
+              
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+
+       <a href="#" class="logout-btn scrollto"><span class="d-none d-md-inline"></span>déconnecter</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  
+    {% block content %}
+        
+    {% endblock %}
+  
+
+  <!-- Template Main JS File -->
+  <script src="{{asset('assets_front/js/main.js')}}"></script>
+   {% block javascript %}
+    
+   {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+{% extends 'base_proprietaire.html.twig' %}
+
+{% block title %}Propriétaire{% endblock %}
+
+{% block body %}
+    <div id="hero" class="d-flex justify-content-center align-items-center">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+
+
+            <div class="container py-5 ">
+                <div class="row">
+                    <table id="example" class="table table-striped" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Race</th>
+                            <th>Age</th>
+                            <th>Poids</th>
+                            <th>Propriétaire</th>
+                            <th>Consulter Rapport Médical</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr {% for a in animal %}>
+                            <td>{{ a.nom }}</td>
+                            <td>{{ a.race }}</td>
+                            <td>{{ a.age }}</td>
+                            <td>{{ a.poids }}</td>
+                            <td>{{ a.propriétaire }}</td>
+                            <td>
+
+                                <form action="{{ path('crm', {'id_Animal': a.id})}}" method="post">
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-9">
+                                            <button type="submit" class="btn btn-primary">Rapport Médical</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                            </td>
+                        </tr {% endfor %}>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+{% endblock %}

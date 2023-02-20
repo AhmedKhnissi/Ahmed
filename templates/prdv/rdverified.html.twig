@@ -1,0 +1,66 @@
+{% extends 'base_proprietaire.html.twig' %}
+
+{% block title %}Propriétaire{% endblock %}
+{% block body %}
+    <div id="hero" class="d-flex justify-content-center align-items-center">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="container">
+                <h3>Votre Rendez-Vous est Prise en Charge Par Le Vétérinaire</h3>
+
+                    <img id="my-image" src="{{ asset('asset/img/chek-removebg-preview.png') }}" >
+                    <!-- Regrouper les deux boutons dans un élément div -->
+                    <div class="button-group">
+                        <!-- Bouton 1 -->
+                        <a href="{{ path('proprietaire') }}" class="button">Back To Home</a>
+
+                        <!-- Bouton 2 -->
+                        <a href="{{ path('mrdv') }}" class="button">Consulter RDV</a>
+                    </div>
+
+
+
+
+            </div>
+
+            <style>
+                .container {
+                    text-align: center; /* Centrer le contenu horizontal */
+                }
+                #my-image {
+                    width: 200px; /* Modifier la largeur de votre image selon vos besoins */
+                    height: 200px; /* Modifier la hauteur de votre image selon vos besoins */
+                    display: block; /* Permettre de centrer l'image */
+                    margin: 0 auto; /* Centrer l'image horizontalement */
+                    margin-top: 100px; /* Modifier la marge supérieure pour centrer l'image verticalement */
+                }
+            </style>
+            <!-- Appliquer des styles CSS pour positionner les boutons -->
+            <style>
+                .button-group {
+                    display: flex; /* Utiliser flexbox pour aligner les éléments horizontalement */
+                    justify-content: center; /* Centrer les éléments horizontalement */
+                    margin-top: 20px; /* Ajouter une marge supérieure pour séparer les éléments de l'image */
+                }
+
+                .button {
+                    display: inline-block; /* Afficher les boutons en tant que blocs en ligne */
+                    padding: 10px 20px; /* Ajouter de la marge intérieure pour donner de l'espace aux boutons */
+                    background-color: blue; /* Modifier la couleur de fond en bleu */
+                    border-radius: 10px;
+                    color: white; /* Modifier la couleur du texte en blanc */
+                    text-decoration: none; /* Supprimer le soulignement par défaut des liens */
+                    margin: 0 10px; /* Ajouter de l'espace entre les boutons */
+                }
+                h3 {
+                    font-size: 36px; /* Modifier la taille de la police */
+                    font-family: Arial, sans-serif; /* Modifier la police de caractères */
+                    margin-top: 50px; /* Ajouter de la marge supérieure pour séparer du haut */
+                }
+            </style>
+
+
+
+        </div>
+    </div>
+{% endblock %}

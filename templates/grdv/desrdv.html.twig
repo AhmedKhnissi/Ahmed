@@ -1,0 +1,68 @@
+{% extends 'base_veterinaire.html.twig' %}
+{% block title %}Véterinaire{% endblock %}
+
+{% block body %}
+    <div id="hero" class="d-flex justify-content-center align-items-center">
+        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+
+
+
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead>
+                <tr>
+                    <th>Vetérinaire   </th>
+                    <th>Date</th>
+                    <th>Heure</th>
+
+                    <th>Race </th>
+                    <th>Animal  </th>
+                    <th>
+                        Decision
+                    </th>
+                    <th>Modifier   </th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr {%  for r in rdv %}>
+                    <td>{{ r.Veterinaire.name }}</td>
+                    <td>{{ r.date }}</td>
+                    <td>{{ r.heure }}</td>
+
+                    <td>{{ r.raceanimal}}</td>
+                    <td>{{ r.nomanimal}}</td>
+                    <td>{{ r.Decision.affectation }}</td>
+                    <td>
+                        <form class="my-form" action="{{ path('updatev', {'id': r.id}) }}">
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('êtes-vous sur de modifier votre rendez-vous?');">Modifier</button>
+                        </form>
+                    </td>
+
+
+
+
+
+
+                </tr {%  endfor %}>
+                </tbody>
+            </table>
+            <style>
+                .btn {
+                    background-color: blue;
+                    color: white;
+                }
+                .my-form .btn {
+                    background-color: blue;
+                    color: white;
+                }
+            </style>
+
+
+
+
+
+
+        </div>
+    </div>
+{% endblock %}
